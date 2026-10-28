@@ -1,0 +1,86 @@
+:root {
+  color-scheme: light;
+  --ink: #24292f;
+  --muted: #646c75;
+  --link: #315f51;
+  --line: #e4e7e5;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { width: min(860px, calc(100% - 64px)); margin-inline: auto; }
+a { color: var(--link); text-decoration: none; text-underline-offset: 3px; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+::selection { background: #e0ece5; }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; color: #202623; }
+h1 { margin: 0 0 16px; font-size: 36px; font-weight: 500; line-height: 1.2; }
+h2 { margin: 0 0 17px; font-size: 24px; font-weight: 500; line-height: 1.4; }
+h3 { margin: 0 0 4px; font-size: 15px; font-weight: 600; line-height: 1.6; }
+p { margin: 0 0 14px; }
+strong { font-weight: 650; }
+.site-header { padding: 60px 0 25px; border-bottom: 1px solid var(--line); }
+.header-details { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; flex-wrap: wrap; }
+.profile-links, nav { display: flex; flex-wrap: wrap; gap: 20px; font-size: 13px; }
+.profile-links { overflow-wrap: anywhere; }
+nav a { color: var(--muted); }
+.section { padding: 30px 0; }
+.section + .section { border-top: 1px solid var(--line); }
+.about-copy p:last-child { margin-bottom: 0; }
+.about-copy a { text-decoration: underline; }
+.education-list article { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 24px; }
+.education-list article + article { margin-top: 25px; }
+.education-list h3 { grid-column: 1; grid-row: 1; }
+.education-list p { grid-column: 1; margin: 0; font-size: 14px; }
+.education-list .period { grid-column: 2; grid-row: 1; font-size: 12px; color: var(--muted); padding-top: 2px; white-space: nowrap; }
+.project-grid { display: grid; gap: 24px; }
+.project-meta { display: flex; gap: 15px; font-size: 10px; color: var(--muted); letter-spacing: .5px; margin-bottom: 5px; }
+.project h3 { font-size: 16px; }
+.project p { font-size: 14px; margin-bottom: 5px; }
+.project-footer { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+.site-footer { display: flex; justify-content: space-between; padding: 20px 0 35px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.skip-link { position: absolute; top: -100px; left: 20px; background: var(--ink); color: #fff; padding: 8px 12px; }
+.skip-link:focus { top: 10px; }
+@media (max-width: 600px) {
+  .wrap { width: calc(100% - 40px); }
+  .site-header { padding-top: 35px; }
+  h1 { font-size: 32px; }
+  .header-details { flex-direction: column; gap: 14px; }
+  .profile-links { gap: 6px 18px; }
+  .education-list article { display: flex; flex-direction: column; }
+  .education-list .period { margin-bottom: 4px; }
+  .section { padding: 25px 0; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+ .industry-list { list-style: none; margin: 0; padding: 0; }
+.industry-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 24px; padding: 10px 0; }
+.industry-list strong { font-size: 15px; }
+.industry-list span { color: var(--muted); font-size: 14px; }
+.industry-list .industry-team { grid-column: 1; }
+.industry-list .industry-period { font-size: 12px; white-space: nowrap; padding-top: 2px; }
+@media (max-width: 600px) {
+  .industry-list li { display: flex; flex-direction: column; gap: 0; }
+  .industry-list .industry-period { order: 2; }
+}
+
+.publication-list { margin: 0; padding-left: 22px; }
+.publication-list li { padding-left: 5px; }
+.publication-list li + li { margin-top: 24px; }
+.publication-list li::marker { color: var(--muted); font-size: 13px; }
+.publication-list h3 { font-size: 15px; line-height: 1.6; margin-bottom: 5px; }
+.publication-list p { margin: 0; font-size: 14px; }
+.publication-venue { color: var(--muted); }
+
+.selected-projects { margin: 0; padding-left: 22px; }
+.selected-projects li { padding-left: 5px; }
+.selected-projects li + li { margin-top: 12px; }
+.selected-projects li::marker { color: var(--muted); font-size: 13px; }
